@@ -1,0 +1,256 @@
+main {
+    width: 60%;
+    max-width: 900px;
+    margin: 0 auto;
+    max-height: 600px;
+    height: 80%;
+    background-color: None;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.left-div {
+    width: 50%;
+    height: 100%;
+    float: left;
+    background: linear-gradient(180deg, #A2F9FF 0%, rgba(63, 139, 208, 0.77) 100%);
+    border-radius: 20px 0 0 20px;
+    backdrop-filter: blur(25px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.signup-card {
+    z-index: 2;
+    position: relative;
+    width: 80%;
+    height: 80%;
+    background: #FFFFFF40;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.signup-card h1 {
+    color: #FFFFFF;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.signup-card p {
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    right: 10%;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-align: left;
+    line-height: 1.2;
+}
+
+
+
+.signup-card span.colour-highlight {
+    font-weight: 700;
+    background: linear-gradient(90deg, #6B7BFF 0%, #5E31FF 48.23%, #7B3AFE 75.31%, #CD43FD 100%);
+    /* This makes the text transparent */
+    -webkit-text-fill-color: transparent;
+    /* This makes the gradient show through */
+    -webkit-background-clip: text;
+    background-clip: border-s;
+}
+
+.left-div .blob-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    z-index: 1;
+    filter: blur(30px);
+}
+
+.left-div .blob-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    z-index: 1;
+    filter: blur(30px);
+}
+
+
+.right-div {
+    width: 50%;
+    height: 100%;
+    float: right;
+    background-color: #fff;
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.right-div .logo {
+    width: 50%;
+    min-width: 200px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.right-div .heading {
+    color: #797979;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.right-div form {
+    margin-top: 10px;
+}
+
+.right-div form input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.right-div label {
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-align: left;
+    line-height: 2;
+}
+
+.eye-icon {
+    margin-left: -30px;
+    cursor: pointer;
+}
+
+.eye-icon img {
+    width: 20px;
+    object-fit: contain;
+    margin-left: -10px;
+    margin-bottom: -5px;
+}
+
+.forgot-password {
+    color: #797979;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-align: right;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-decoration: none;
+    background: linear-gradient(90deg, #0057FF 0%, #E800FC 94.03%);
+    /* This makes the text transparent */
+    -webkit-text-fill-color: transparent;
+    /* This makes the gradient show through */
+    -webkit-background-clip: text;
+    background-clip: border-s;
+}
+
+.right-div form button {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #0057FF 0%, #E800FC 94.03%);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-align: center;
+    line-height: 1.2;
+    cursor: pointer;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+}
+
+.break-line {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    background-color: #E5E5E5;
+    margin: 10px 0;
+}
+
+.break-line span {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 0 10px;
+    color: #797979;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.login-link {
+    color: #7234FE;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-align: center;
+    line-height: 1.2;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.error-text {
+    color: #FF0000 !important;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    text-align: center;
+}
+
+
+@media only screen and (max-width: 1300px) {
+    .left-div {
+        display: none;
+    }
+    .right-div {
+        width: 80%;
+        border-radius: 20px;
+    }
+    main {
+        width: 90%;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+  }

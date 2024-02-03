@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block head %}
+<title>Sign In | KRMU</title>
+<link rel="stylesheet" href="/static/css/sign-in.css">
+<script src="/static/js/sign-in.js" defer></script>
+
+{% endblock %}
+{% block body %}
+
+<main>
+    <div class="left-div">
+        <div class="blob-top">
+            <svg viewBox="0 0 1000 1000"
+                xmlns="http://www.w3.org/2000/svg"><defs><clippath
+                        id="a"><path fill="currentColor"
+                            d="M794.5 638.5Q590 777 446.5 710T204 428q-99-215 167.5-284.5t447 143.5q180.5 213-24 351.5Z" /></clippath></defs><g
+                    clip-path="url(#a)"><path fill="#2B66D8"
+                        d="M794.5 638.5Q590 777 446.5 710T204 428q-99-215 167.5-284.5t447 143.5q180.5 213-24 351.5Z" /></g></svg>
+        </div>
+
+        <div class="blob-bottom">
+            <svg viewBox="0 0 1000 1000"
+                xmlns="http://www.w3.org/2000/svg"><defs><clippath
+                        id="a"><path fill="currentColor"
+                            d="M860 608.5Q759 717 666 815.5t-201.5 16Q356 749 193.5 710T98 524.5q67-146.5 141.5-247t195.5-98Q556 182 682 212t202.5 159Q961 500 860 608.5Z" /></clippath></defs><g
+                    clip-path="url(#a)"><path fill="#D765FF"
+                        d="M860 608.5Q759 717 666 815.5t-201.5 16Q356 749 193.5 710T98 524.5q67-146.5 141.5-247t195.5-98Q556 182 682 212t202.5 159Q961 500 860 608.5Z" /></g></svg>
+        </div>
+
+        <div class="signup-card">
+            <h1>
+                Welcome back to <br> your <span class="colour-highlight">KRMU</span>
+                <br> job portal.
+            </h1>
+            <p>
+                Let's get you started on your journey to success with
+                KRMU job Portal.
+            </p>
+        </div>
+
+    </div>
+    <div class="right-div">
+
+        <img src="/static/images/logo.svg" alt="KRMU Logo" class="logo">
+
+        <p class="heading" id="alert-text"> Welcome to KRMU Carrer
+            Portal</p>
+
+        <form action="/sign-up" method="post" class="signup-form">
+
+            <div class="input-div">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email"
+                    placeholder="Enter your email" required>
+            </div>
+
+            <div class="input-div">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password"
+                    placeholder="Enter your password" required
+                    minlength="8">
+                <i class="eye-icon" onclick="togglePasswordVisibility()">
+                    <img id="togglePassword"
+                        src="/static/images/open-eye.svg" alt="eye">
+                </i>
+            </div>
+
+            <p class="forgot-password">
+                <a href="/forgot-password">Forgot Password?</a>
+            </p>
+
+            <button type="submit" class="submit-btn" id="submit-button"
+                onclick="event.preventDefault();submitResponse()">Sign
+                In</button>
+
+        </form>
+    </div>
+</main>
+{% endblock %}
