@@ -18,15 +18,10 @@ class ApplicationConfig:
 
     def __init__(self):
         # Application details
-        self.app_name = "Career Portal | KRMU"
+        self.app_name = "K.R. Mangalam University Career Portal"
         self.app_version = "1.0.0"
-        self.app_authors = ["Om Mishra", "Yash Wardhan", "Bharat Bhushan", "Shambhavi"]
-        self.app_author_github = [
-            "https://github.com/om-mishra7/",
-            "https://github.com/yash-soni7744",
-            "github.com/bharat-yadav-11/",
-            "github.com/shambhavi-srivastava/",
-        ]
+        self.app_authors = ["Om Mishra (https://github.com/om-mishra7/)","Yash Soni (https://github.com/yash-soni7744/)","Bharat Yadav (https://github.com/bharat-yadav-11/)","Shambhavi Singh (https://github.com/Shambhavisingh123/)"]
+
         self.app_contact_email = "contact@om-mishra.com"
 
         # Application configuration
@@ -54,4 +49,4 @@ class ApplicationConfig:
                 
 
     def __str__(self):
-        return f"Mini Project: {self.app_name} | Version: {self.app_version}| Authors: {self.app_authors} | Contact: {self.app_contact_email}"
+        return f"Mini Project: {self.app_name} | Version: {self.app_version} | Authors: {', '.join(self.app_authors)} | Contact Email: {self.app_contact_email}"
