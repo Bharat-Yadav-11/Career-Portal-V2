@@ -1,6 +1,14 @@
-import requests
 import bcrypt
-    
+import requests
+import secrets
+
+def generate_csrf_token():
+    """
+    Generate a CSRF token
+    :return: The CSRF token
+    """
+    return secrets.token_urlsafe(32)
+
 def verify_recaptcha_token(token: str, ApplicationConfig: object) -> bool:
     """
     Verify a reCAPTCHA token using the Google reCAPTCHA API
@@ -20,23 +28,20 @@ def verify_recaptcha_token(token: str, ApplicationConfig: object) -> bool:
 
     return response.json().get("success", False)
 
-def verify_password_hash(password: str, password_hash: str) -> bool:
+def verify_password_hash(password, password_hash):
     """
     Verify a password against a password hash
     :param password: The password to verify
     :param password_hash: The password hash to verify against
     :return: True if the password is valid, False otherwise
     """
-    if bcrypt.checkpw(password.encode("utf-8"), password_hash.encode("utf-8")):
-        print("password is correct")
-    else:
-        print("password is incorrect")
-    return bcrypt.checkpw(password.encode("utf-8"), password_hash.encode("utf-8"))
+    return bcrypt.checkpw(password.encode('utf-8'), password_hash)
 
-def hash_password(password: str) -> str:
+def hash_password(password):
     """
-    Hash a password using bcrypt
+    Hash a password
     :param password: The password to hash
     :return: The hashed password
     """
-    return bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
+    return bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+

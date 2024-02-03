@@ -67,15 +67,15 @@ function submitResponse() {
               }
               return response.json();
             }).then(function (data) {
-              if (data.success == false) {
+              if (data.status == 'error') {
                 alertText.classList.add("error-text");
                 alertText.innerHTML = data.message;
                 return;
               }
-              if (data.success == true) {
+              if (data.status == 'success') {
                 alertText.classList.add("success-text");
                 alertText.innerHTML = data.message;
-                window.location.href = "/";
+                window.location.href = data.redirect + "/dashboard";
               }
             })
             .catch(function (error) {;

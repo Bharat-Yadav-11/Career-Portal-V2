@@ -1,9 +1,9 @@
-from flask import Flask, request
+from flask import Flask, request, session
 
 from auth.routes import auth
 from config import ApplicationConfig
 
-from tests.database_test import mysql_test_database, redis_test_database
+from tests.database_test import mongodb_test_database, redis_test_database
 from helpers import verify_recaptcha_token
 
 app = Flask(__name__)
@@ -13,7 +13,7 @@ app = Flask(__name__)
 app.register_blueprint(auth, url_prefix="/auth")
 
 # Application configuration
-app.config.from_object(ApplicationConfig)
+app.secret_key = ApplicationConfig.secret_key
 
 
 # Application middleware
@@ -25,26 +25,35 @@ def before_request():
                 request.json.get("recaptcha_token", ""), ApplicationConfig
             ):
                 return {"message": "Invalid reCAPTCHA token"}, 400
+
+@app.after_request
+def after_request(response):
+    if session.get("user") is not None:
+        response.headers["data-csrf-token"] = session["user"]["user_session_csrf_token"]
+    return response
             
 
 
 # Test database connections
-mysql_client = ApplicationConfig.mysql_client
+mongodb_client = ApplicationConfig.mongodb_client
 redis_client = ApplicationConfig.redis_client
 
-if not mysql_test_database(mysql_client)[0]:
-    raise mysql_test_database(
-        f"Unable to connect to MySQL database: {ApplicationConfig.mysql_host}"
+if not mongodb_test_database(mongodb_client)[0]:
+    raise mongodb_test_database(
+        "Unable to connect to MongoDB database"
     )[1]
 
 if not redis_test_database(redis_client)[0]:
     raise redis_test_database(
-        f"Unable to connect to Redis database: {ApplicationConfig.redis_host}"
+        "Unable to connect to Redis database"
     )[1]
 
 
-mysql_cursor = mysql_client.cursor()
-
+@app.route("/admin/dashboard", methods=["GET"])
+def admin_dashboard():
+    return (
+        f"The session data is: {session['user']}"
+    )
 
 
 if __name__ == "__main__":

@@ -5,7 +5,7 @@ This file is used to store all the configuration variables for the application.
 import os
 from dotenv import load_dotenv
 import redis
-import pymysql
+import pymongo
 
 load_dotenv()
 
@@ -32,19 +32,8 @@ class ApplicationConfig:
 
     # Database configuration
     redis_client = redis.from_url(os.getenv("REDIS_URI"))
-
-    mysql_client = pymysql.connect(
-    charset="utf8mb4",
-    connect_timeout=5,
-    cursorclass=pymysql.cursors.DictCursor,
-    db="career_portal",
-    host=os.getenv("MYSQL_HOST"),
-    password= os.getenv("MYSQL_PASSWORD"),
-    read_timeout=5,
-    port=27250,
-    user=os.getenv("MYSQL_USER"),
-    write_timeout=5,
-    )
+    mongodb_client = pymongo.MongoClient(os.getenv("MONGODB_URI"))
+    mongodb_database = mongodb_client["PROD"]
     
     recaptcha_secret_key = os.getenv("RECAPTCHA_SECRET_KEY")
         

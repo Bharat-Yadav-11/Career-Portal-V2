@@ -3,12 +3,12 @@ This file contains the unit tests for the databases.
 """
 
 
-def mysql_test_database(mysql_client):
+def mongodb_test_database(mongodb_client):
     """
-    Attempts to ping the MySQL database to ensure that the connection is working.
+    Attempts to ping the MongoDB database to ensure that the connection is working.
     """
     try:
-        mysql_client.ping()
+        mongodb_client.server_info()
         return (True, None)
 
     except Exception as error:
