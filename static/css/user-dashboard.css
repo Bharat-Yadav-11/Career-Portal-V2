@@ -111,6 +111,10 @@ main {
     width: 120px;
 }
 
+.job-applications-status-input-group button:hover {
+    background-color: #e0e0e0;
+}
+
 .job-applications-status-table-body {
     padding: 10px;
 }
@@ -314,12 +318,20 @@ main {
     width: 120px;
 }
 
+.job-open-application-cta button:hover {
+    background-color: #e0e0e0;
+}
+
 .job-open-application-cta-apply {
     background-color: #050505 !important;
     border: 1px solid #050505;
     color: #fff;
     cursor: pointer;
     transition: all 0.3s ease;
+}
+
+.job-open-application-cta-apply:hover {
+    background-color: #1a1a1a !important;
 }
 
 @media (max-width: 768px) {
