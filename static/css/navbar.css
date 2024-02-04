@@ -9,7 +9,7 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 50px;
+    height: 60px;
     position: fixed;
     top: 0;
 }
@@ -82,11 +82,14 @@ nav div a:hover {
     right: -10px;
     flex-direction: column;
     gap: 10px;
-    background-color: #e5e5e5;
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    border-top: none;
     width: 400px;
     height: auto;
     border-radius: 0 0 5px 5px;
     display: none;
+    transition: all 0.3s ease;
 }
 
 .notification {
@@ -121,13 +124,12 @@ nav div a:hover {
     gap: 5px;
     align-items: center;
     width: 100%;
-    border-bottom: 1px solid #e5e5e5;
     padding: 10px 20px;
     border-radius: 5px;
 }
 
 .notification-item:hover {
-    border: 1px solid #000;
+    background-color: #e5e5e5;  
 }
 
 .notification-item-header {
@@ -175,7 +177,9 @@ nav div a:hover {
     right: 0px;
     flex-direction: column;
     gap: 10px;
-    background-color: #e5e5e5;
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    border-top: none;
     width: 200px;
     height: auto;
     border-radius: 0 0 5px 5px;
@@ -186,14 +190,11 @@ nav div a:hover {
     width: 100%;
     padding: 10px 20px;
     text-decoration: none;
-    border-bottom: none;
-    border-radius: 5px;
-    border: 1px solid #e5e5e5;
+    transition: all 0.3s ease;
 }
 
 .user-profile-dropdown a:hover {
-    border-bottom: none;
-    border: 1px solid #000;
+    background-color: #e5e5e5;
 }
 
 .mobile-nav-links {
