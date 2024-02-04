@@ -8,7 +8,6 @@ from flask import (
 )
 from helpers import verify_password_hash, generate_csrf_token
 from config import ApplicationConfig
-from . import auth
 from datetime import datetime
 
 mongodb_client = ApplicationConfig.mongodb_database
@@ -121,8 +120,8 @@ def sign_out():
     This route is used to sign-out the user.
     """
     if session.get("user") is not None:
-        if session["user"]["user_session_csrf_token"] == request.headers.get(
-            "data-csrf-token"
+        if session["user"]["user_session_csrf_token"] == request.cookies.get(
+            "user_session_csrf_token"
         ):
             session.pop("user", None)
         else:

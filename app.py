@@ -1,6 +1,7 @@
 from flask import Flask, request, session
 
 from auth.routes import auth
+from user.routes import user
 from config import ApplicationConfig
 
 from tests.database_test import mongodb_test_database, redis_test_database
@@ -11,6 +12,7 @@ app = Flask(__name__)
 
 # Register blueprint(s) for application modules
 app.register_blueprint(auth, url_prefix="/auth")
+app.register_blueprint(user, url_prefix="/user")
 
 # Application configuration
 app.secret_key = ApplicationConfig.secret_key
@@ -29,7 +31,12 @@ def before_request():
 @app.after_request
 def after_request(response):
     if session.get("user") is not None:
-        response.headers["data-csrf-token"] = session["user"]["user_session_csrf_token"]
+        response.set_cookie(
+            "user_session_csrf_token",
+            session["user"]["user_session_csrf_token"],
+            secure=True,
+            httponly=True,
+        )
     return response
             
 

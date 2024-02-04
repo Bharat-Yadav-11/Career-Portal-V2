@@ -1,0 +1,143 @@
+<link rel="stylesheet" href="/static/css/navbar.css">
+<script src="/static/js/navbar.js" defer></script>
+<nav>
+    <div class="logo">
+        <img
+            src="https://upload.wikimedia.org/wikipedia/en/thumb/3/38/K.R._Mangalam_University_logo.svg/800px-K.R._Mangalam_University_logo.svg.png"
+            alt="KRMU Logo">
+    </div>
+    {% if session.user %}
+    <div class="nav-links">
+        {% if session.user.user_privilege_level == 1 %}
+        <a href="/user/dashboard">Dashboard</a>
+        <a href="/user/job-postings">Job Postings</a>
+        <a href="/user/applied-jobs">Applied Jobs</a>
+        <a href="/user/cv-manager">CV Manager</a>
+        {% endif %}
+        {% if session.user.user_privilege_level == 2 %}
+        <a href="/moderator/dashboard">Dashboard</a>
+        <a href="/moderator/job-postings">Job Postings</a>
+        <a href="/moderator/edit-profiles">Edit Profiles</a>
+        {% endif %}
+        {% if session.user.user_privilege_level == 3 %}
+        <a href="/admin/dashboard">Dashboard</a>
+        <a href="/admin/job-postings">Job Postings</a>
+        <a href="/admin/system-metrics">System Metrics</a>
+        {% endif %}
+    </div>
+    {% endif %}
+    <div class="nav-buttons">
+        {% if session.user %}
+        <div class="notifications" id="notifications">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="var(--ci-primary-color, currentColor)"
+                    d="M450.27,348.569,406.6,267.945V184c0-83.813-68.187-152-152-152s-152,68.187-152,152v83.945L58.928,348.568A24,24,0,0,0,80.031,384h86.935c-.238,2.636-.367,5.3-.367,8a88,88,0,0,0,176,0c0-2.7-.129-5.364-.367-8h86.935a24,24,0,0,0,21.1-35.431ZM310.6,392a56,56,0,1,1-111.419-8H310.018A56.14,56.14,0,0,1,310.6,392ZM93.462,352,134.6,276.055V184a120,120,0,0,1,240,0v92.055L415.736,352Z"
+                    class="ci-primary" />
+            </svg>
+            <div class="notification-dot"></div>
+            <div class="notification-dropdown" id="notification-dropdown">
+                <div class="notification">
+                    <div class="notification-header">
+                        <h3>Notifications</h3>
+                        <a href={{ "user/notifications" if
+                            session.user.user_privilege_level == 1 else
+                            "moderator/notifications" if
+                            session.user.user_privilege_level == 2 else
+                            "admin/notifications" }}>View
+                            All</a>
+                    </div>
+                    <div class="notification-body">
+                        <div class="notification-item">
+                            <div class="notification-item-header">
+                                <h4>Job Application</h4>
+                                <p>2 hours ago</p>
+                            </div>
+                            <div class="notification-item-body">
+                                <p>Your application for the position of Software
+                                    Developer has been accepted.</p>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <div class="notification-item-header">
+                                <h4>Job Application</h4>
+                                <p>2 hours ago</p>
+                            </div>
+                            <div class="notification-item-body">
+                                <p>Your application for the position of Software
+                                    Developer has been accepted.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="user-profile" id="user-profile">
+
+        {% if session.user.user_privilege_level == 1 %}
+        <img
+            src="https://api.dicebear.com/7.x/notionists/svg?seed={{ session.user.user_public_id }}"
+            alt="User Profile Picture">
+        <div class="user-profile-dropdown" id="user-profile-dropdown">
+            <a href="/user/settings">Settings</a>
+            <a href="/auth/sign-out">Sign Out</a>
+        </div>
+        {% endif %}
+        {% if session.user.user_privilege_level == 2 %}
+        <img
+            src="https://api.dicebear.com/7.x/notionists/svg?seed={{ session.user.user_public_id }}"
+            alt="User Profile Picture">
+        <div class="user-profile-dropdown" id="user-profile-dropdown">
+            <a href="/moderator/settings">Settings</a>
+            <a href="/auth/sign-out">Sign Out</a>
+        </div>
+        {% endif %}
+        {% if session.user.user_privilege_level == 3 %}
+        <div class="user-profile">
+            <img
+                src="https://api.dicebear.com/7.x/notionists/svg?seed={{ session.user.user_public_id }}"
+                alt="User Profile Picture">
+            <div class="user-profile-dropdown" id="user-profile-dropdown">
+                <a href="/admin/settings">Settings</a>
+                <a href="/auth/sign-out">Sign Out</a>
+            </div>
+            {% endif %}
+        </div>
+        {% else %}
+        <a href="/auth/sign-in"><svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24" viewBox="0 -960 960 960" width="24"><path
+                    d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z" /></svg><span>Sign
+                In</span></a>
+        <a href="/post-job"><svg xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                viewBox="0 -960 960 960" width="24"><path
+                    d="M80-120v-720h400v160h400v560H80Zm80-80h240v-80H160v80Zm0-160h240v-80H160v80Zm0-160h240v-80H160v80Zm0-160h240v-80H160v80Zm320 480h320v-400H480v400Zm80-240v-80h160v80H560Zm0 160v-80h160v80H560Z" /></svg><span>Post
+                Job</span></a>
+        {% endif %}
+    </div>
+    <div class="hamburger">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24"
+            viewBox="0 -960 960 960" width="24"><path
+                d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" /></svg>
+    </div>
+    <div class="mobile-nav-links">
+        {% if session.user %}
+        {% if session.user.user_privilege_level == 1 %}
+        <a href="/user/dashboard">Dashboard</a>
+        <a href="/user/applied-jobs">Applied Jobs</a>
+        <a href="/user/cv-manager">CV Manager</a>
+        {% endif %}
+        {% if session.user.user_privilege_level == 2 %}
+        <a href="/moderator/dashboard">Dashboard</a>
+        <a href="/moderator/job-postings">Job Postings</a>
+        <a href="/moderator/edit-profiles">Edit Profiles</a>
+        {% endif %}
+        {% if session.user.user_privilege_level == 3 %}
+        <a href="/admin/dashboard">Dashboard</a>
+        <a href="/admin/job-postings">Job Postings</a>
+        <a href="/admin/system-metrics">System Metrics</a>
+        {% endif %}
+        {% endif %}
+    </div>
+
+</nav>

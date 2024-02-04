@@ -1,0 +1,338 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0 40px;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.dashboard-info-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.info-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-card-icon {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+
+.info-card-icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+.job-applications-status {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    gap: 20px;
+}
+
+.job-applications-status h2 {
+    margin-top: 40px;
+}
+
+.job-applications-status-table {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+}
+
+.job-applications-status-table-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.job-applications-status-input-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    width: max-content;
+}
+
+.job-applications-status-input-group input {
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    width: 100%;
+    padding: 10px;
+}
+
+.job-applications-status-input-group input:focus {
+    outline: none;
+}
+
+.job-applications-status-input-group button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 120px;
+}
+
+.job-applications-status-table-body {
+    padding: 10px;
+}
+
+.job-applications-status-table-body table {
+    width: 100%;
+    border-collapse: collapse;
+    padding: 20px;
+}
+
+
+.job-applications-status-table-body table thead tr th {
+    padding: 10px 20px 20px 20px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.job-applications-status-table-body table tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+.job-applications-status-table-body table tbody tr:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.job-applications-status-table-body table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.job-applications-status-table-body table tbody tr td {
+    padding: 10px 20px;
+}
+
+.job-applications-status-table-body table tbody tr td.application-status {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:5px;
+}
+
+.job-applications-status-table-body table tbody tr td.application-status span {
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+.job-applications-status-table-body table tbody tr td .company-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.job-applications-status-table-body table tbody tr td .company-info img {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.job-applications-status-table-body table tbody tr td .company-info p {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.job-applications-status-table-body table tbody tr td button {
+    padding: 10px 20px;
+    width: 120px;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.job-applications-status-table-body table tbody tr td button:hover {
+    background-color: #e0e0e0;
+}
+
+.job-open-applications {
+    width: 100%;
+}
+
+.job-open-applications h2 {
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.job-open-applications-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    gap: 20px;
+}
+
+.job-open-application {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.job-open-application:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.job-open-application-company-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.job-open-application-company-info img {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.job-open-application-company-info p {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.job-open-application-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.job-open-application-details h3 span {
+    background-color: #050505;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: .8rem;
+    color: #fff;
+    margin-left: 5px;
+}
+
+.job-open-application-tags {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.job-open-application-tags span {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    font-size: .8rem;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.job-open-application-tags span svg {
+    width: 20px;
+    height: 20px;
+}
+
+.job-open-application-cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    flex-wrap: wrap;
+}
+
+.job-open-application-cta button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 120px;
+}
+
+.job-open-application-cta-apply {
+    background-color: #050505 !important;
+    border: 1px solid #050505;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 0 20px;
+    }
+
+    .dashboard-info-cards {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .info-card {
+        width: calc(50% - 10px);
+    }
+}
