@@ -3,4 +3,4 @@ pymongo
 redis
 requests
 python-dotenv
-bycrypt
+bcrypt
