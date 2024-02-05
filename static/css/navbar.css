@@ -78,7 +78,7 @@ nav div a:hover {
 
 .notification-dropdown {
     position: absolute;
-    top: 44px;
+    top: 49px;
     right: -10px;
     flex-direction: column;
     gap: 10px;
@@ -173,7 +173,7 @@ nav div a:hover {
 
 .user-profile-dropdown {
     position: absolute;
-    top: 50px;
+    top: 60px;
     right: 0px;
     flex-direction: column;
     gap: 10px;
@@ -191,10 +191,12 @@ nav div a:hover {
     padding: 10px 20px;
     text-decoration: none;
     transition: all 0.3s ease;
+    border: none;
 }
 
 .user-profile-dropdown a:hover {
     background-color: #e5e5e5;
+    border: none;
 }
 
 .mobile-nav-links {
@@ -225,12 +227,92 @@ nav div a:hover {
         display: block;
     }
 
-    .mobile-nav-links {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
         display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+        border-radius: 50%;
+        border: 1px solid #e5e5e5;
+        height: 40px;
+        width: 40px;
+    }
+
+
+    .hamburger svg {
+        height: 20px;
+        width: 20px;
+        fill: #000;
+    }
+
+    .hamburger:hover {
+        background-color: #e5e5e5;
+    }
+
+    .mobile-nav-links {
+        display: none;
         flex-direction: column;
-        gap: 20px;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        gap: 10px;
         position: absolute;
-        top: 50px;
-        right: 20px;
+        top: -10px;
+        right: -20px !important;
+        width: 70vw;
+        background-color: #e5e5e5;
+        height: 100vh;
+        z-index: 100;
+        border-radius: 5px 0 0 5px;
+        padding: 80px 20px 20px 20px;
+    }
+
+    .mobile-nav-links a {
+        text-decoration: none;
+        color: #000;
+        height: max-content;
+    }
+
+    .mobile-nav-links a:last-child {
+        margin-bottom: 10px;
+    }
+
+    .mobile-nav-break {
+        margin: 20px 0 10px 0;
+    }
+
+    .mobile-nav-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        fill: #000;
+        z-index: 1000;
+        display: none;
+    }
+
+    .mobile-nav-close svg {
+        height: 20px;
+        width: 20px;
+    }
+
+    .mobile-nav-close:hover {
+        fill: #e5e5e5;
+    }
+
+    
+
+    .notifications {
+        display: none;
+    }
+
+    .user-profile-dropdown {
+        display: none;
     }
 }

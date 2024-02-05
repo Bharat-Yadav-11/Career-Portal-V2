@@ -118,6 +118,7 @@ main {
 
 .job-applications-status-table-body {
     padding: 10px;
+    overflow-x: auto;
 }
 
 .job-applications-status-table-body table {
@@ -229,6 +230,7 @@ main {
     border: 1px solid #e0e0e0;
     transition: all 0.3s ease;
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .job-open-application:hover {
@@ -263,6 +265,7 @@ main {
     justify-content: flex-start;
     align-items: flex-start;
     gap: 5px;
+    width: 100%;
 }
 
 .job-open-application-details h3 span {
@@ -281,6 +284,7 @@ main {
     align-items: center;
     gap: 10px;
     margin-top: 10px;
+    flex-wrap: wrap;
 }
 
 .job-open-application-tags span {
@@ -348,6 +352,42 @@ main {
     }
 
     .info-card {
-        width: calc(50% - 10px);
+        width: 100%;
+    }
+
+    .job-open-application {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .job-open-application-details h3 span {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    .job-open-application-cta {
+        width: 100%;
+    }
+
+
+    .job-open-application-cta button {
+        width: 100%;
+    }
+
+    .job-applications-status-table-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 50px;
+    }
+
+    .job-applications-status-table-header p {
+        display: block;
+    }
+
+    .job-applications-status-input-group {
+        display: none;
     }
 }
