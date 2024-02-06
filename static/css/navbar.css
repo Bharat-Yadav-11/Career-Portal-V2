@@ -271,6 +271,7 @@ nav div a:hover {
         z-index: 100;
         border-radius: 5px 0 0 5px;
         padding: 80px 20px 20px 20px;
+        transition: all 0.3s ease;
     }
 
     .mobile-nav-links a {
@@ -305,14 +306,17 @@ nav div a:hover {
     .mobile-nav-close:hover {
         fill: #e5e5e5;
     }
-
     
-
     .notifications {
         display: none;
+    }
+
+    .user-profile {
+        margin-left: auto;
     }
 
     .user-profile-dropdown {
         display: none;
     }
+
 }
