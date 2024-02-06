@@ -233,6 +233,10 @@ nav div a:hover {
         display: none;
     }
 
+    .nav-buttons {
+        margin-left: auto;
+    }
+
     .hamburger {
         display: flex;
         flex-direction: row;
@@ -310,7 +314,6 @@ nav div a:hover {
     
     .notifications {
         display: none;
-        margin-left: auto;
     }
 
 
