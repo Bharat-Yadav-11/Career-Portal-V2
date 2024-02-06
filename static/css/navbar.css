@@ -213,6 +213,7 @@ nav div a:hover {
 @media (max-width: 768px) {
     nav {
         padding: 0 20px;
+        justify-content: flex-start;
     }
 
     nav div img {
