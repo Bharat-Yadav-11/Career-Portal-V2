@@ -310,11 +310,9 @@ nav div a:hover {
     
     .notifications {
         display: none;
-    }
-
-    .user-profile {
         margin-left: auto;
     }
+
 
     .user-profile-dropdown {
         display: none;
