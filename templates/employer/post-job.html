@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% block head %}
+<title>Post Job | KRMU</title>
+<link rel="stylesheet" href="/static/css/post-job.css">
+<script src="/static/js/post-job.js"></script>
+{% endblock %}
+{% block body %}
+{% include "partial/navbar.html" %}
+<main>
+    <div class="post-job-header">
+        <h1>Post Job</h1>
+        <p>Begin your journey to find the perfect candidate.</p>
+    </div>
+    <div class="job-details-form">
+        <p>Job Details</p>
+        <label for="job-title">Job Title</label>
+        <input type="text" id="job-title" name="job-title"
+            placeholder="Provide the job title">
+        <label for="job-description">Job Description</label>
+        <textarea id="job-description" name="job-description"
+            placeholder="Provide a brief description of the job" rows="5"
+            minlength="50"></textarea>
+        <div class="job-details-form-row">
+            <label for="job-application-deadline">Application Deadline</label>
+            <input type="date" id="job-application-deadline"
+                name="job-application-deadline">
+            <label for="job-sector">Job Sector</label>
+            <select id="job-sector" name="job-sector">
+                <option value="IT">IT</option>
+                <option value="Finance">Finance</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Sales">Sales</option>
+                <option value="HR">HR</option>
+                <option value="Operations">Operations</option>
+                <option value="Others">Others</option>
+            </select>
+            <label for="job-type">Job Type</label>
+            <select id="job-type" name="job-type">
+                <option value="Full Time">Full Time</option>
+                <option value="Part Time">Part Time</option>
+                <option value="Internship">Internship</option>
+                <option value="Contract">Contract</option>
+                <option value="Freelance">Freelance</option>
+            </select>
+        </div>
+
+        <div class="job-details-form-row">
+            <label for="job-expected-salary-range">Expected Salary Range</label>
+            <input type="number" id="job-expected-salary-range"
+                name="job-expected-salary-range" placeholder="Min salary in INR">
+            <input type="number" id="job-expected-salary-range"
+                name="job-expected-salary-range" placeholder="Max salary in INR">
+            <label for="job-experience">Experience Required</label>
+            <select id="job-experience" name="job-experience">
+                <option value="0">Fresher</option>
+                <option value="1">1 Year</option>
+                <option value="2">2 Years</option>
+                <option value="3">3 Years</option>
+                <option value="4">4 Years</option>
+            </select>
+            <label for="job-vacancy">Vacancy</label>
+
+        </div>
+        <div class="job-details-form-row">
+            <label for="job-vacancy">Job Qualification</label>
+            <select id="job-qualification" name="job-qualification">
+                <option value="B.Tech">B.Tech</option>
+                <option value="M.Tech">M.Tech</option>
+                <option value="MBA">MBA</option>
+                <option value="BBA">BBA</option>
+                <option value="BCA">BCA</option>
+                <option value="MCA">MCA</option>
+                <option value="B.Com">B.Com</option>
+                <option value="M.Com">M.Com</option>
+                <option value="B.Sc">B.Sc</option>
+                <option value="M.Sc">M.Sc</option>
+                <option value="B.A">B.A</option>
+                <option value="M.A">M.A</option>
+                <option value="Others">Others</option>
+            </select>
+        </div>
+    </div>
+    <div class="job-location-form">
+        <p>Job Location</p>
+        <label for="job-remote">Remote</label>
+        <input type="checkbox" id="job-remote" name="job-remote">
+        <label for="job-location">Country</label>
+        <select id="job-location" name="job-location">
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="UK">UK</option>
+            <option value="Canada">Canada</option>
+            <option value="Australia">Australia</option>
+            <option value="Germany">Germany</option>
+            <option value="France">France</option>
+            <option value="Others">Others</option>
+        </select>
+        <label for="job-state">State</label>
+        <input type="text" id="job-state" name="job-state"
+            placeholder="Provide the job state">
+        <label for="job-city">City</label>
+        <input type="text" id="job-city" name="job-city"
+            placeholder="Provide the job city">
+        <label for="job-complete-address">Complete Address</label>
+        <textarea id="job-complete-address" name="job-complete-address"
+            placeholder="Provide the complete address of the job"></textarea>
+
+    </div>
+    <div class="job-contact-details-form">
+        <p>Contact Details</p>
+        <label for="contact-name">Contact Name</label>
+        <input type="text" id="contact-name" name="contact-name"
+            placeholder="Provide the contact name">
+        <div class="job-contact-details-form-row">
+            <label for="contact-email">Contact Email</label>
+            <input type="email" id="contact-email" name="contact-email"
+                placeholder="Provide the contact email">
+            <label for="contact-phone">Contact Phone</label>
+            <input type="tel" id="contact-phone" name="contact-phone"
+                placeholder="Provide the contact phone">
+        </div>
+    </div>
+    <div class="job-post-terms">
+        <input type="checkbox" id="job-post-terms" name="job-post-terms">
+        <label for="job-post-terms">I agree to the <a href="#">Terms and
+                Conditions</a> and <a href="#">Privacy Policy</a> of the
+            placement cell, K.R. Mangalam University.</label>
+    </div>
+    <div class="job-post-button">
+        <button type="submit" id="post-job-button">Post Job</button>
+    </div>
+</main>
+{% endblock %}
