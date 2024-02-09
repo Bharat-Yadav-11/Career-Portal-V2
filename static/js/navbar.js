@@ -11,7 +11,7 @@ const mobileNavLinks = document.getElementById('mobile-nav-links');
 userProfileDropdown.style.display = 'none';
 notificationsDropdown.style.display = 'none';
 mobileNavClose.style.display = 'none';
-mobileNavLinks.style.display = 'none';
+mobileNavLinks.style.transform = 'translateX(70vw)';
 
 
 function toggleDropdown(dropdown) {
@@ -49,11 +49,14 @@ if (notifications) {
 
 if (hamburgerIcon) {
     hamburgerIcon.addEventListener('click', () => {
-        if (mobileNavLinks.style.display === 'none') {
-            mobileNavLinks.style.display = 'flex';
+        if (mobileNavLinks.style.transform === 'translateX(70vw)') {
+            mobileNavLinks.style.transform = 'translateX(0)';
+            let main = document.querySelector('main');
+            main.style.filter = 'blur(5px)';
             mobileNavClose.style.display = 'flex';
         } else {
-            mobileNavLinks.style.display = 'none';
+            console.log('clicked');
+            mobileNavLinks.style.transform = 'translateX(70vw)';
             mobileNavClose.style.display = 'none';
         }
     });
@@ -61,8 +64,10 @@ if (hamburgerIcon) {
 
 if (mobileNavClose) {
     mobileNavClose.addEventListener('click', () => {
-        mobileNavLinks.style.display = 'none';
+        mobileNavLinks.style.transform = 'translateX(70vw)';
         mobileNavClose.style.display = 'none';
+        let main = document.querySelector('main');
+        main.style.filter = 'blur(0px)';
     }
     );
 }

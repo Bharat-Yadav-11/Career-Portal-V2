@@ -262,15 +262,15 @@ nav div a:hover {
     }
 
     .mobile-nav-links {
-        display: none;
+        transform: translateX(70vw);
+        display: flex;
         flex-direction: column;
         justify-content: flex-start !important;
         align-items: flex-start !important;
         gap: 10px;
         position: absolute;
         top: -10px;
-        right: -20px !important;
-        width: 70vw;
+        bottom: 0px;
         background-color: #e5e5e5;
         height: 100vh;
         z-index: 100;
@@ -283,6 +283,7 @@ nav div a:hover {
         text-decoration: none;
         color: #000;
         height: max-content;
+        width: 70vw;
     }
 
     .mobile-nav-links a:last-child {

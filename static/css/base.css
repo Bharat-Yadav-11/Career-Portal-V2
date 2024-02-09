@@ -15,6 +15,10 @@ body {
   margin-top: 80px;
 }
 
+main {
+  transition: all 0.3s ease;
+}
+
 ::-webkit-scrollbar {
   width: 3px;
 }
