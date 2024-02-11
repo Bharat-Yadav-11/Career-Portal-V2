@@ -86,21 +86,9 @@ if not redis_test_database(redis_client)[0]:
 # Application routes
 
 
-
 @app.route("/admin/dashboard", methods=["GET"])
 def admin_dashboard():
     return f"The session data is: {session['user']}"
-
-
-@app.route("/api/v1/organization/post-job", methods=["POST"])
-def api_post_job():
-    request_data = request.json
-    return (
-        jsonify(
-            {"status": "error", "message": "This feature is currently not available"}
-        ),
-        501,
-    )
 
 
 @app.errorhandler(403)

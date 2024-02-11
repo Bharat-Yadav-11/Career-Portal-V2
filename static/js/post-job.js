@@ -66,7 +66,7 @@ function postJob() {
                 formData.set('reCaptchaToken', token);
 
 
-                fetch('/api/v1/organization/post-job', {
+                fetch('/organization/api/v2/post-job', {
                     method: 'POST',
                     body: JSON.stringify(Object.fromEntries(formData)),
                     headers: {

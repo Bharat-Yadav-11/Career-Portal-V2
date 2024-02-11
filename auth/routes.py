@@ -93,7 +93,70 @@ def sign_in_api():
                 ),
                 401,
             )
+        else:
+            organization = mongodb_client["ORGANIZATIONS"].find_one(
+                {"organization_email_address": sign_in_data.get("email").lower()}
+            )
+            if organization is not None:
+                if organization["organization_metadata"]["is_account_blocked"]:
+                    return (
+                        jsonify(
+                            {
+                                "status": "error",
+                                "message": "Your account has been blocked, please contact the support team.",
+                            }
+                        ),
+                        401,
+                    )
 
+                if verify_password_hash(
+                    sign_in_data.get("password"),
+                    organization["organization_hashed_password"],
+                ):
+                    csrf_token = generate_csrf_token()
+
+                    session["organization"] = {
+                        "organization_public_id": organization[
+                            "organization_public_id"
+                        ],
+                        "organization_email_address": organization[
+                            "organization_email_address"
+                        ],
+                        "organization_name": organization["organization_name"],
+                        "organization_logo_url": organization["organization_logo_url"],
+                        "organization_address": organization["organization_address"],
+                        "organization_session_csrf_token": csrf_token,
+                    }
+
+                    mongodb_client["ORGANIZATIONS"].update_one(
+                        {
+                            "organization_public_id": organization[
+                                "organization_public_id"
+                            ]
+                        },
+                        {"$set": {"organization_metadata.last_login": datetime.now()}},
+                    )
+
+                    return (
+                        jsonify(
+                            {
+                                "status": "success",
+                                "message": "Organization signed in successfully.",
+                                "redirect": "/organization/dashboard",
+                            }
+                        ),
+                        200,
+                    )
+
+                return (
+                    jsonify(
+                        {
+                            "status": "error",
+                            "message": "Invalid email address or password.",
+                        }
+                    ),
+                    401,
+                )
         return (
             jsonify(
                 {

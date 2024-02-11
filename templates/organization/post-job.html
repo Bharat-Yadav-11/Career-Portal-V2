@@ -25,9 +25,11 @@
                 <label>Expected Salary Range
                     (Annual)</label>
                 <input type="number" id="job-expected-salary-range-minimum"
+                    min="0"
                     name="job-expected-salary-range"
                     placeholder="Min salary in INR">
                 <input type="number" id="job-expected-salary-range-maximum"
+                    min="0"
                     name="job-expected-salary-range"
                     placeholder="Max salary in INR">
             </div>
@@ -90,7 +92,7 @@
             </div>
             <div>
                 <label for="job-vacancy">Vacancy</label>
-                <input type="number" id="job-vacancy" name="job-vacancy"
+                <input type="number" id="job-vacancy" name="job-vacancy" min="1"
                     placeholder="Provide the number of vacancies">
             </div>
             <div class="job-skill-form">
