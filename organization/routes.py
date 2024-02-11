@@ -19,7 +19,7 @@ organization = Blueprint("organization", __name__)
 def before_request():
     if session.get("organization") is None:
         return jsonify(
-            {"status": "error", "message": "You
+            {"status": "error", "message": "The current account is not registered as an organization, login as an organization to access this page"}
         ), 403
         
 
