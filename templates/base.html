@@ -13,13 +13,19 @@
         <script
             src="https://www.google.com/recaptcha/api.js?render=6LfTQOgnAAAAAPUKwxk5C_ZQNIi__k7HGTzbi3Yw"
             defer></script>
-
+        <script src="/static/js/base.js" defer></script>
         <link rel="icon" type="image/ico" href="/static/images/favicon.ico">
 
         {% block head %}{% endblock %}
 
     </head>
     <body>
+        <system-message id="system-message" style="display: none;">
+            <div class="system-message-container" id="system-message-container">
+                <p class="system-message-text" id="system-message-text"></p>
+                <svg onclick="hideSystemMessage()" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </div>
+        </system-message>
         {% block body %}{% endblock %}
     </body>
 </html>

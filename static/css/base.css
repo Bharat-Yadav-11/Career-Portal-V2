@@ -19,6 +19,84 @@ main {
   transition: all 0.3s ease;
 }
 
+system-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  top: 60;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  padding: 10px 30px;
+
+}
+
+.system-message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 20px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.system-message-container svg {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.system-message-container.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.system-message-container.warning {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+.system-message-container.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.system-message-container.info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+.system-message-container.error svg {
+  fill: #721c24;
+}
+
+.system-message-container.warning svg {
+  fill: #856404;
+}
+
+.system-message-container.success svg {
+  fill: #155724;
+}
+
+.system-message-container.info svg {
+  fill: #0c5460;
+}
+
+
+.system-message-container p {
+  text-align: center;
+  width: 100%;
+  padding: 0 10px;  
+}
+
+
 ::-webkit-scrollbar {
   width: 3px;
 }

@@ -9,19 +9,22 @@ main {
     margin-bottom: 50px;
 }
 
-.job-details-form {
+.job-details-form,
+.job-location-form {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
-    gap: 10px;
+    gap: 0px;
     margin-top: 50px;
     border: 1px solid #e0e0e0;
     border-radius: 5px;
 }
 
-.job-details-form h2 {
+
+.job-details-form h2,
+.job-location-form h2 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -33,7 +36,8 @@ main {
     margin-bottom: 20px;
 }
 
-.job-details-form label {
+.job-details-form label,
+.job-location-form label {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -41,9 +45,11 @@ main {
     width: 100%;
     gap: 10px;
     margin-left: 20px;
+    margin-bottom: 10px;
 }
 
-.job-details-form input {
+.job-details-form input,
+.job-details-form textarea {
     border-radius: 5px;
     border: 1px solid #e0e0e0;
     width: calc(100% - 40px);
@@ -51,4 +57,265 @@ main {
     height: 50px;
     margin: 0 20px;
     margin-bottom: 20px;
+}
+
+.job-details-form select {
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    width: calc(100% - 40px);
+    padding: 5px 10px;
+    height: 50px;
+    margin: 0 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+.job-details-form-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+
+.job-details-form-row div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 400px;
+    gap: 10px;
+}
+
+.job-salary-range {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 0px !important;
+    margin-bottom: 20px !important;
+}
+
+.job-salary-range label {
+    width: fit-content;
+    margin-bottom: 0px !important;
+}
+
+.job-salary-range input {
+    width: 300px;
+    margin: 0 20px;
+}
+
+.job-location-form-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.job-location-form-row div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 400px;
+    gap: 10px;
+}
+
+.job-location-form-row div label {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.job-location-form div input {
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    width: 100%;
+    padding: 5px 10px;
+    height: 50px;
+    margin: 0 20px;
+    margin-bottom: 20px;
+}
+
+.job-location-form div select {
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    width: 100%;
+    padding: 5px 10px;
+    height: 50px;
+    margin: 0 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+.job-location-form textarea {
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    width: 100%;
+    padding: 5px 10px;
+    margin: 0 20px;
+    margin-bottom: 20px;
+    height: 150px;
+}
+
+.job-contact-details-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0px;
+    margin-top: 50px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+.job-contact-details-form div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.job-contact-details-form div div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 400px;
+    gap: 10px;
+}
+
+.job-contact-details-form h2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.job-contact-details-form label {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    gap: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.job-contact-details-form input {
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    width: calc(100% - 40px);
+    padding: 5px 10px;
+    height: 50px;
+    margin: 0 20px;
+    margin-bottom: 20px;
+}
+
+.job-post-terms {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.job-post-terms label {
+    font-size: .9em;
+}
+
+.job-post-terms input {
+    width: 15px;
+    height: 15px;
+}
+
+.job-post-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.job-post-button button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #050505;
+    border: 1px solid #050505;
+    color: #fff;
+    cursor: pointer;
+}
+
+.job-post-button button:hover {
+    background-color: #333;
+}
+
+.job-post-button button:last-child {
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    color: #000;
+}
+
+.job-post-button button:last-child:hover {
+    background-color: #e0e0e0;
+}
+
+@media screen and (max-width: 768px) {
+    .job-details-form-row div {
+        width: 100%;
+    }
+
+    .job-salary-range {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        width: 100% !important;
+        gap: 20px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .job-salary-range div {
+        width: 100% !important;
+    }
+
+    .job-location-form-row div {
+        width: calc(100% - 40px);
+    }
+
+    .job-location-form textarea {
+        width: calc(100% - 40px);
+    }
+
+    .job-contact-details-form div div {
+        width: 100%;
+    }
+
 }
