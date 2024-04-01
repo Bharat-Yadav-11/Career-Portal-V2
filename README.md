@@ -4,7 +4,7 @@ Career Portal | K.R. Mangalam University is a comprehensive web dashboard aimed 
 
 ## Acknowledgements
 
-This project was developed as a semester project by the following team members:
+This project is in development as a semester project by the following team members:
 - [Om Mishra](https://github.com/Om-Mishra7)
 - [Yash Soni](https://github.com/yash-soni7744/)
 - [Bharat Yadav](https://github.com/bharat-yadav-11/)
