@@ -1,7 +1,5 @@
 # Career Portal | K.R. Mangalam University
 
-Mai Chutiya Hu
-
 Career Portal | K.R. Mangalam University is a comprehensive web dashboard aimed at bridging the gap between students, companies, and the placement department of K.R. Mangalam University. The platform facilitates seamless interaction and communication, streamlining the job application process for students and simplifying job posting and applicant management for the placement department.
 
 ## Acknowledgements
