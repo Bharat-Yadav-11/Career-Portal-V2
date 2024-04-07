@@ -7,6 +7,7 @@ from flask_session import Session
 from auth.routes import auth
 from user.routes import user
 from organization.routes import organization
+from placement.routes import placement
 from config import ApplicationConfig
 
 from tests.database_test import mongodb_test_database, redis_test_database
@@ -30,6 +31,7 @@ Session(app)
 app.register_blueprint(auth, url_prefix="/auth")
 app.register_blueprint(user, url_prefix="/user")
 app.register_blueprint(organization, url_prefix="/organization")
+app.register_blueprint(placement, url_prefix="/placement")
 
 # Application configuration
 app.secret_key = ApplicationConfig.secret_key
