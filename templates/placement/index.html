@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+{% block head %}
+<title>Post Job | KRMU</title>
+<link rel="stylesheet" href="/static/css/post-job.css">
+<script src="/static/js/post-job.js"></script>
+{% endblock %}
+{% block body %}
+{% include "partial/navbar.html" %}
+<main>
+    <div class="post-job-header">
+        <h1>Post Job</h1>
+        <p>Begin your journey to find the perfect candidate.</p>
+    </div>
+    <div class="job-details-form">
+        <h2>Job Details</h2>
+        <label for="job-title">Job Title *</label> <!-- Mandatory field -->
+        <input type="text" id="job-title" name="job-title"
+            placeholder="Provide the job title" required> <!-- Mandatory field -->
+        <label for="job-description">Job Description *</label> <!-- Mandatory field -->
+        <textarea id="job-description" name="job-description"
+            placeholder="Provide a brief description of the job" rows="5"
+            minlength="50" required></textarea> <!-- Mandatory field -->
+        <div class="job-details-form-row">
+            <div class="job-salary-range">
+                <label>Expected Salary Range
+                    (Annual)</label>
+                <input type="number" id="job-expected-salary-range-minimum"
+                    min="0"
+                    name="job-expected-salary-range"
+                    placeholder="Min salary in INR">
+                <input type="number" id="job-expected-salary-range-maximum"
+                    min="0"
+                    name="job-expected-salary-range"
+                    placeholder="Max salary in INR">
+            </div>
+        </div>
+        <div class="job-details-form-row">
+            <div>
+                <label for="job-application-deadline">Application Deadline *</label> <!-- Mandatory field -->
+                <input type="date" id="job-application-deadline"
+                    name="job-application-deadline" required> <!-- Mandatory field -->
+            </div>
+            <div>
+                <label for="job-sector">Job Sector *</label> <!-- Mandatory field -->
+                <select id="job-sector" name="job-sector" required> <!-- Mandatory field -->
+                    <option value="">Select Job Sector</option>
+                    <option value="IT">Information Technology</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Sales">Sales</option>
+                    <option value="HR">Human Resource</option>
+                    <option value="Operations">Operations</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+            <div>
+                <label for="job-type">Job Type *</label> <!-- Mandatory field -->
+                <select id="job-type" name="job-type" required> <!-- Mandatory field -->
+                    <option value="">Select Job Type</option>
+                    <option value="Full Time">Full Time</option>
+                    <option value="Part Time">Part Time</option>
+                    <option value="Internship">Internship</option>
+                    <option value="Contract">Contract</option>
+                    <option value="Freelance">Freelance</option>
+                </select>
+            </div>
+            <div>
+                <label for="job-experience">Experience Required *</label> <!-- Mandatory field -->
+                <select id="job-experience" name="job-experience" required> <!-- Mandatory field -->
+                    <option value="">Select Experience</option>
+                    <option value="0">Fresher</option>
+                    <option value="1">One Year</option>
+                    <option value="2">Two Years</option>
+                    <option value="3">Three Years</option>
+                    <option value="4">Four Years</option>
+                </select>
+            </div>
+            <div>
+                <label for="job-qualification">Job Qualification *</label> <!-- Mandatory field -->
+                <select id="job-qualification" name="job-qualification" required> <!-- Mandatory field -->
+                    <option value="">Select Qualification</option>
+                    <option value="B.Tech">Bachelor of Technology</option>
+                    <option value="M.Tech">Master of Technology</option>
+                    <option value="BBA">Bachelor of Business Administration</option>
+                    <option value="MBA">Master of Business Administration</option>
+                    <option value="BCA">Bachelor of Computer Applications</option>
+                    <option value="MCA">Master of Computer Applications</option>
+                    <option value="B.Com">Bachelor of Commerce</option>
+                    <option value="M.Com">Master of Commerce</option>
+                    <option value="B.Sc">Bachelor of Science</option>
+                    <option value="M.Sc">Master of Science</option>
+                    <option value="B.A">Bachelor of Arts</option>
+                    <option value="M.A">Master of Arts</option>
+                </select>
+            </div>
+            <div>
+                <label for="job-vacancy">Vacancy *</label> <!-- Mandatory field -->
+                <input type="number" id="job-vacancy" name="job-vacancy" min="1"
+                    placeholder="Provide the number of vacancies" required> <!-- Mandatory field -->
+            </div>
+            <div class="job-skill-form">
+                <label for="job-skill">Skills Required (Comma Separated)</label>
+                <input type="text" id="job-skill" name="job-skill"
+                    placeholder="Provide the skills required (Python, Java)">
+            </div>
+            <div>
+                <label for="job-workplace-type">Workplace Type *</label> <!-- Mandatory field -->
+                <select id="job-workplace-type" name="job-workplace-type" required> <!-- Mandatory field -->
+                    <option value="">Select Workplace Type</option>
+                    <option value="Onsite">Onsite (Office)</option>
+                    <option value="Remote">Remote (Work from Home)</option>
+                    <option value="Hybrid">Hybrid (Onsite and Remote)</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+    <div class="job-location-form">
+        <h2>Job Location</h2>
+        <div class="job-location-form-row">
+            <div>
+                <label for="job-country">Country *</label> <!-- Mandatory field -->
+                <select id="job-country" name="job-country" required> <!-- Mandatory field -->
+                    <option value="">Select Country</option>
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="UK">UK</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Germany">Germany</option>
+                    <option value="France">France</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+            <div>
+                <label for="job-state">State</label>
+                <input type="text" id="job-state" name="job-state"
+                    placeholder="Provide the job state">
+            </div>
+            <div>
+                <label for="job-city">City</label>
+                <input type="text" id="job-city" name="job-city"
+                    placeholder="Provide the job city">
+            </div>
+        </div>
+        <label for="job-complete-address">Complete Address</label>
+        <textarea id="job-complete-address" name="job-complete-address"
+            placeholder="Provide the complete address of the job"></textarea>
+
+    </div>
+    <div class="job-contact-details-form">
+        <h2>Contact Details</h2>
+        <div class="job-contact-details-form-row">
+            <div>
+                <label for="contact-name">Contact Name *</label> <!-- Mandatory field -->
+                <input type="text" id="contact-name" name="contact-name"
+                    placeholder="Provide the contact name" required> <!-- Mandatory field -->
+            </div>
+            <div>
+                <label for="contact-email">Contact Email *</label> <!-- Mandatory field -->
+                <input type="email" id="contact-email" name="contact-email"
+                    placeholder="Provide the contact email" required> <!-- Mandatory field -->
+            </div>
+            <div>
+                <label for="contact-phone">Contact Phone *</label> <!-- Mandatory field -->
+                <input type="tel" id="contact-phone" name="contact-phone"
+                    placeholder="Provide the contact phone" required> <!-- Mandatory field -->
+            </div>
+            <div>
+                <label for="alternate-phone">Alternate Phone (Optional)</label>
+                <input type="tel" id="alternate-phone" name="alternate-phone"
+                    placeholder="Provide the alternate phone">
+            </div>
+            <div>
+                <label for="contact-linkedin">Contact LinkedIn (Optional)</label>
+                <input type="url" id="contact-linkedin" name="contact-linkedin"
+                    placeholder="Provide the contact LinkedIn">
+            </div>
+        </div>
+    </div>
+    <div class="job-post-terms">
+        <input type="checkbox" id="job-post-terms" name="job-post-terms" required> <!-- Mandatory field -->
+        <label for="job-post-terms">I agree to the <a
+                href="/organization/terms-and-conditions">Terms and
+                Conditions</a> and <a href="/organization/privacy-policy">Privacy
+                Policy</a> of the
+            placement cell, K.R. Mangalam University.</label>
+    </div>
+    <div class="job-post-button">
+        <button type="submit" id="post-job-button" onclick="postJob()">Post Job</button>
+        <button id="save-job-button" onclick="saveJobDraft()">Save as Draft</button>
+    </div>
+</main>
+{% endblock %}
